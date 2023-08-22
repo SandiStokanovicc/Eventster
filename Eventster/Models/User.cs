@@ -4,7 +4,7 @@ namespace Eventster.Models
 {
     public class User : IdentityUser
     {
-        //organizations
+        public List<OrganizationUser> OrganizationUsers { get; set; }
         //events
     }
 }
