@@ -9,6 +9,7 @@ using Microsoft.IdentityModel.Tokens;
 using Eventster.Services.AuthService;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
+using Eventster.Services.OrganizationService;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
@@ -63,6 +64,7 @@ builder.Services.AddSwaggerGen(c => {
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IOrganizationService, OrganizationService>();
 
 builder.Services.AddCors(options => options.AddPolicy(name: "ApplicationOrigins",
     policy => {

@@ -1,9 +1,8 @@
 ﻿using System.Text.Json.Serialization;
-using Newtonsoft.Json.Converters;
 
 namespace Eventster.Models
 {
-    [JsonConverter(typeof(StringEnumConverter))]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum OrganizationRole
     {
         Owner = 1,
